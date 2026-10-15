@@ -1,0 +1,50 @@
+{"id": 1, "group": "lore", "question": "Which company developed Minecraft?", "expected_route": "lore", "expected_sources": ["Mojang Studios"], "answer_keywords": ["Mojang"], "verified": true}
+{"id": 2, "group": "lore", "question": "What is Mojang Studios?", "expected_route": "lore", "expected_sources": ["Mojang Studios"], "answer_keywords": ["Minecraft"], "verified": true}
+{"id": 3, "group": "lore", "question": "What is the Nether?", "expected_route": "lore", "expected_sources": ["The Nether"], "answer_keywords": ["dimension"], "verified": true}
+{"id": 4, "group": "lore", "question": "What does the Nether contain?", "expected_route": "lore", "expected_sources": ["The Nether"], "answer_keywords": ["lava"], "verified": true}
+{"id": 5, "group": "lore", "question": "What is the End?", "expected_route": "lore", "expected_sources": ["The End"], "answer_keywords": ["dimension"], "verified": true}
+{"id": 6, "group": "lore", "question": "What does a creeper do?", "expected_route": "lore", "expected_sources": ["Creeper"], "answer_keywords": ["explosion"], "verified": true}
+{"id": 7, "group": "lore", "question": "What is the Ender Dragon?", "expected_route": "lore", "expected_sources": ["Ender Dragon"], "answer_keywords": ["dragon"], "verified": true}
+{"id": 8, "group": "lore", "question": "What is the Wither?", "expected_route": "lore", "expected_sources": ["Wither"], "answer_keywords": ["boss"], "verified": true}
+{"id": 9, "group": "lore", "question": "What is a ghast?", "expected_route": "lore", "expected_sources": ["Ghast"], "answer_keywords": ["Nether"], "verified": true}
+{"id": 10, "group": "lore", "question": "Which dimension are blazes found in?", "expected_route": "lore", "expected_sources": ["Blaze"], "answer_keywords": ["Nether"], "verified": true}
+{"id": 11, "group": "lore", "question": "What is a piglin?", "expected_route": "lore", "expected_sources": ["Piglin"], "answer_keywords": ["Nether"], "verified": true}
+{"id": 12, "group": "lore", "question": "What is a warden?", "expected_route": "lore", "expected_sources": ["Warden"], "answer_keywords": ["sculk"], "verified": true}
+{"id": 13, "group": "lore", "question": "What is sculk?", "expected_route": "lore", "expected_sources": ["Sculk"], "answer_keywords": ["Warden"], "verified": true}
+{"id": 14, "group": "lore", "question": "What is bedrock?", "expected_route": "lore", "expected_sources": ["Bedrock"], "answer_keywords": ["bedrock"], "verified": true}
+{"id": 15, "group": "lore", "question": "How is obsidian formed?", "expected_route": "lore", "expected_sources": ["Obsidian"], "answer_keywords": ["lava"], "verified": true}
+{"id": 16, "group": "lore", "question": "What is an iron golem?", "expected_route": "lore", "expected_sources": ["Iron Golem"], "answer_keywords": ["village"], "verified": true}
+{"id": 17, "group": "lore", "question": "What is a villager?", "expected_route": "lore", "expected_sources": ["Villager"], "answer_keywords": ["trade"], "verified": true}
+{"id": 18, "group": "lore", "question": "What is the Overworld?", "expected_route": "lore", "expected_sources": ["Overworld"], "answer_keywords": ["dimension"], "verified": true}
+{"id": 19, "group": "lore", "question": "What is a zombie?", "expected_route": "lore", "expected_sources": ["Zombie"], "answer_keywords": ["undead"], "verified": true}
+{"id": 20, "group": "lore", "question": "What is an enderman?", "expected_route": "lore", "expected_sources": ["Enderman"], "answer_keywords": ["teleport"], "verified": true}
+{"id": 21, "group": "mechanics", "question": "How do I craft a beacon?", "expected_route": "mechanics", "item": "beacon", "answer_keywords": ["Nether Star", "Obsidian"], "verified": true}
+{"id": 22, "group": "mechanics", "question": "What do I need to make a crafting table?", "expected_route": "mechanics", "item": "crafting table", "answer_keywords": ["Planks"], "verified": true}
+{"id": 23, "group": "mechanics", "question": "What is the recipe for a torch?", "expected_route": "mechanics", "item": "torch", "answer_keywords": ["Stick"], "verified": true}
+{"id": 24, "group": "mechanics", "question": "How do I make a chest?", "expected_route": "mechanics", "item": "chest", "answer_keywords": ["Planks"], "verified": true}
+{"id": 25, "group": "mechanics", "question": "How do I make a furnace?", "expected_route": "mechanics", "item": "furnace", "answer_keywords": ["Cobblestone"], "verified": true}
+{"id": 26, "group": "mechanics", "question": "What is the recipe for a white bed?", "expected_route": "mechanics", "item": "white bed", "answer_keywords": ["Wool"], "verified": true}
+{"id": 27, "group": "mechanics", "question": "How do I craft a diamond sword?", "expected_route": "mechanics", "item": "diamond sword", "answer_keywords": ["Diamond", "Stick"], "verified": true}
+{"id": 28, "group": "mechanics", "question": "How do I craft an iron pickaxe?", "expected_route": "mechanics", "item": "iron pickaxe", "answer_keywords": ["Iron Ingot", "Stick"], "verified": true}
+{"id": 29, "group": "mechanics", "question": "How do I make a bucket?", "expected_route": "mechanics", "item": "bucket", "answer_keywords": ["Iron Ingot"], "verified": true}
+{"id": 30, "group": "mechanics", "question": "How do I craft an enchanting table?", "expected_route": "mechanics", "item": "enchanting table", "answer_keywords": ["Book", "Obsidian"], "verified": true}
+{"id": 31, "group": "mechanics", "question": "How do I craft a Nether star?", "expected_route": "mechanics", "item": "nether star", "answer_keywords": ["no crafting recipe"], "verified": true}
+{"id": 32, "group": "mechanics", "question": "How do I craft bedrock?", "expected_route": "mechanics", "item": "bedrock", "answer_keywords": ["no crafting recipe"], "verified": true}
+{"id": 33, "group": "mechanics", "question": "How do I make a flying carpet?", "expected_route": "mechanics", "item": "flying carpet", "answer_keywords": ["No recipe found"], "verified": true}
+{"id": 34, "group": "mechanics", "question": "How do I make a brewing stand?", "expected_route": "mechanics", "item": "brewing stand", "answer_keywords": ["Blaze Rod"], "verified": true}
+{"id": 35, "group": "mechanics", "question": "How do I craft a stone sword?", "expected_route": "mechanics", "item": "stone sword", "answer_keywords": ["Cobblestone", "Stick"], "verified": true}
+{"id": 36, "group": "version", "question": "Which version added the Warden?", "expected_route": "lore", "expected_sources": ["Warden"], "answer_keywords": [], "verified": false}
+{"id": 37, "group": "version", "question": "Which version added sculk?", "expected_route": "lore", "expected_sources": ["Sculk"], "answer_keywords": [], "verified": false}
+{"id": 38, "group": "version", "question": "Which version added piglins?", "expected_route": "lore", "expected_sources": ["Piglin"], "answer_keywords": [], "verified": false}
+{"id": 39, "group": "version", "question": "Which version added the Wither?", "expected_route": "lore", "expected_sources": ["Wither"], "answer_keywords": [], "verified": false}
+{"id": 40, "group": "version", "question": "Which version added iron golems?", "expected_route": "lore", "expected_sources": ["Iron Golem"], "answer_keywords": [], "verified": false}
+{"id": 41, "group": "version", "question": "Which version added villagers?", "expected_route": "lore", "expected_sources": ["Villager"], "answer_keywords": [], "verified": false}
+{"id": 42, "group": "version", "question": "Which version added ghasts?", "expected_route": "lore", "expected_sources": ["Ghast"], "answer_keywords": [], "verified": false}
+{"id": 43, "group": "version", "question": "Which version added blazes?", "expected_route": "lore", "expected_sources": ["Blaze"], "answer_keywords": [], "verified": false}
+{"id": 44, "group": "version", "question": "Which version added the End dimension?", "expected_route": "lore", "expected_sources": ["The End"], "answer_keywords": [], "verified": false}
+{"id": 45, "group": "version", "question": "Which version added the Nether?", "expected_route": "lore", "expected_sources": ["The Nether"], "answer_keywords": [], "verified": false}
+{"id": 46, "group": "version", "question": "Which version added enchanting tables?", "expected_route": "lore", "expected_sources": ["Enchanting Table"], "answer_keywords": [], "verified": false}
+{"id": 47, "group": "version", "question": "Which version changed how Ender Pearls work?", "expected_route": "lore", "expected_sources": ["Ender Pearl"], "answer_keywords": [], "verified": false}
+{"id": 48, "group": "version", "question": "Which version added the Nether portal?", "expected_route": "lore", "expected_sources": ["Nether Portal"], "answer_keywords": [], "verified": false}
+{"id": 49, "group": "version", "question": "Which version added Redstone?", "expected_route": "lore", "expected_sources": ["Redstone"], "answer_keywords": [], "verified": false}
+{"id": 50, "group": "version", "question": "Which version added diamonds?", "expected_route": "lore", "expected_sources": ["Diamond"], "answer_keywords": [], "verified": false}
