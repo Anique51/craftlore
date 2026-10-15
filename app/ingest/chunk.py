@@ -15,10 +15,15 @@ def page_url(title: str) -> str:
     return "https://minecraft.wiki/w/" + quote(title.replace(" ", "_"))
 
 
-def clean(wikitext: str) -> str:
-    """Remove templates, links, and markup, keeping the readable text."""
-    return str(mwparserfromhell.parse(wikitext).strip_code(normalize=True, collapse=True)).strip()
+MEDIA_LINE = re.compile(
+    r"^[ \t]*(?:\[\[)?(?:File|Image):.*$|^[ \t]*thumb\|.*$",
+    re.IGNORECASE | re.MULTILINE,
+)
 
+def clean(wikitext: str) -> str:
+    """Remove media markup lines, templates, links, and markup, keeping readable text."""
+    no_media = MEDIA_LINE.sub("", wikitext)
+    return str(mwparserfromhell.parse(no_media).strip_code(normalize=True, collapse=True)).strip()
 
 def split_sections(wikitext: str) -> list[tuple[str, str]]:
     parts = HEADING.split(wikitext)
