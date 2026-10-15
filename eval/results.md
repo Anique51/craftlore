@@ -1,13 +1,15 @@
 # Evaluation results
 
-Verified questions: 35 (wiki: 20, recipe: 15)
+Verified questions: 45 (wiki: 30, recipe: 15)
 
 ## Retrieval recall@5 (wiki questions)
 
 | Mode | Recall@5 |
 |---|---|
-| vector | 20/20 (100%) |
-| keyword | 19/20 (95%) |
-| hybrid | 20/20 (100%) |
+| vector | 29/30 (97%) |
+| keyword | 27/30 (90%) |
+| hybrid | 30/30 (100%) |
 
-## Routing accuracy: 35/35
+## Routing accuracy: 39/45
+
+## Answer keyword match (full graph): 34/45
