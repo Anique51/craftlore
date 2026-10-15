@@ -48,3 +48,13 @@
 {"id": 48, "group": "version", "question": "Which version added the Nether portal?", "expected_route": "lore", "expected_sources": ["Nether Portal"], "answer_keywords": [], "verified": false}
 {"id": 49, "group": "version", "question": "Which version added Redstone?", "expected_route": "lore", "expected_sources": ["Redstone"], "answer_keywords": [], "verified": false}
 {"id": 50, "group": "version", "question": "Which version added diamonds?", "expected_route": "lore", "expected_sources": ["Diamond"], "answer_keywords": [], "verified": false}
+{"id": 51, "group": "hard", "question": "Which mob drops the item needed to make a beacon?", "expected_route": "lore", "expected_sources": ["Wither"], "answer_keywords": ["Nether Star"], "verified": true}
+{"id": 52, "group": "hard", "question": "What do ghasts drop when they die?", "expected_route": "lore", "expected_sources": ["Ghast"], "answer_keywords": ["Ghast Tear"], "verified": true}
+{"id": 53, "group": "hard", "question": "What do blazes drop when killed?", "expected_route": "lore", "expected_sources": ["Blaze"], "answer_keywords": ["Blaze Rod"], "verified": true}
+{"id": 54, "group": "hard", "question": "Which mob is a common source of ender pearls?", "expected_route": "lore", "expected_sources": ["Enderman"], "answer_keywords": ["Ender Pearl"], "verified": true}
+{"id": 55, "group": "hard", "question": "Where do iron golems naturally appear?", "expected_route": "lore", "expected_sources": ["Iron Golem"], "answer_keywords": ["village"], "verified": true}
+{"id": 56, "group": "hard", "question": "How is obsidian made?", "expected_route": "lore", "expected_sources": ["Obsidian"], "answer_keywords": ["water"], "verified": true}
+{"id": 57, "group": "hard", "question": "Which mobs live in the Nether?", "expected_route": "lore", "expected_sources": ["The Nether"], "answer_keywords": ["mobs"], "verified": true}
+{"id": 58, "group": "hard", "question": "Where do piglins live?", "expected_route": "lore", "expected_sources": ["Piglin"], "answer_keywords": ["Nether"], "verified": true}
+{"id": 59, "group": "hard", "question": "What is the main way to get a Nether portal built?", "expected_route": "lore", "expected_sources": ["Nether Portal"], "answer_keywords": ["obsidian"], "verified": true}
+{"id": 60, "group": "hard", "question": "What do zombies drop when they die?", "expected_route": "lore", "expected_sources": ["Zombie"], "answer_keywords": ["Rotten Flesh"], "verified": true}
