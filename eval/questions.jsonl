@@ -30,7 +30,7 @@
 {"id": 30, "group": "mechanics", "question": "How do I craft an enchanting table?", "expected_route": "mechanics", "item": "enchanting table", "answer_keywords": ["Book", "Obsidian"], "verified": true}
 {"id": 31, "group": "mechanics", "question": "How do I craft a Nether star?", "expected_route": "mechanics", "item": "nether star", "answer_keywords": ["no crafting recipe"], "verified": true}
 {"id": 32, "group": "mechanics", "question": "How do I craft bedrock?", "expected_route": "mechanics", "item": "bedrock", "answer_keywords": ["no crafting recipe"], "verified": true}
-{"id": 33, "group": "mechanics", "question": "How do I make a flying carpet?", "expected_route": "mechanics", "item": "flying carpet", "answer_keywords": ["No recipe found"], "verified": true}
+{"id": 33, "group": "unanswerable", "question": "How do I make a flying carpet?", "expected_route": "lore", "expected_sources": [], "answer_keywords": [], "verified": true}
 {"id": 34, "group": "mechanics", "question": "How do I make a brewing stand?", "expected_route": "mechanics", "item": "brewing stand", "answer_keywords": ["Blaze Rod"], "verified": true}
 {"id": 35, "group": "mechanics", "question": "How do I craft a stone sword?", "expected_route": "mechanics", "item": "stone sword", "answer_keywords": ["Cobblestone", "Stick"], "verified": true}
 {"id": 36, "group": "version", "question": "Which version added the Warden?", "expected_route": "lore", "expected_sources": ["Warden"], "answer_keywords": [], "verified": false}

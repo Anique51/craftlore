@@ -14,9 +14,16 @@ TOP_N = 5
 RECIPE_SOURCE = "https://github.com/PrismarineJS/minecraft-data"
 
 ROUTER_PROMPT = (
-    "Classify the user's Minecraft question. Reply with exactly one word:\n"
-    "mechanics - if they ask how to craft an item or what ingredients it needs\n"
-    "lore - for anything else (history, mobs, places, game facts)"
+    "Classify the user's Minecraft question. Reply with exactly one word.\n\n"
+    "Reply 'mechanics' ONLY if the user wants the crafting recipe or the ingredients "
+    "needed to craft one specific item they own or want to build. Examples:\n"
+    "- What ingredients do I need for a stone pickaxe?\n"
+    "- How do I craft a fishing rod?\n\n"
+    "Reply 'lore' for everything else. This includes what a mob drops, where something "
+    "is found, how a block forms in the world, and how a structure is built in the game. "
+    "Examples:\n"
+    "- What does a skeleton drop when it dies?\n"
+    "- Where do endermen spawn?"
 )
 EXTRACT_PROMPT = (
     "Extract the Minecraft item name the user wants a recipe for. "
