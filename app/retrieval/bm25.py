@@ -8,8 +8,7 @@ from rank_bm25 import BM25Okapi
 CHUNKS_FILE = Path("data/chunks.json")
 TOKEN_PATTERN = re.compile(r"[a-z0-9_:']+")
 
-# Common words that carry no meaning for matching. Removing them stops
-# chunks from scoring points just because they contain "the" or "from".
+# Common words that carry no meaning for matching.
 STOPWORDS = {
     "a", "an", "and", "are", "as", "at", "be", "by", "come", "did", "do",
     "does", "for", "from", "get", "how", "i", "in", "is", "it", "my", "of",
@@ -18,9 +17,17 @@ STOPWORDS = {
 }
 
 
+def stem(token: str) -> str:
+    """Crude plural normalizer: 'ghasts' -> 'ghast', 'dies' -> 'die', 'glass' unchanged."""
+    if len(token) > 3 and token.endswith("s") and not token.endswith("ss"):
+        return token[:-1]
+    return token
+
+
 def tokenize(text: str) -> list[str]:
-    """Lowercase, split into word tokens, and drop stopwords."""
-    return [t for t in TOKEN_PATTERN.findall(text.lower()) if t not in STOPWORDS]
+    """Lowercase, split into word tokens, drop stopwords, and normalize plurals."""
+    tokens = [t for t in TOKEN_PATTERN.findall(text.lower()) if t not in STOPWORDS]
+    return [stem(t) for t in tokens]
 
 
 class KeywordIndex:
