@@ -15,6 +15,7 @@ def page_url(title: str) -> str:
     return "https://minecraft.wiki/w/" + quote(title.replace(" ", "_"))
 
 
+DROP_LINE = re.compile(r"\{\{DropLine\|name=([^|}]+)[^}]*\}\}")
 MEDIA_LINE = re.compile(
     r"^[ \t]*(?:\[\[)?(?:File|Image):.*$|^[ \t]*thumb\|.*$",
     re.IGNORECASE | re.MULTILINE,
@@ -23,6 +24,7 @@ MEDIA_LINE = re.compile(
 def clean(wikitext: str) -> str:
     """Remove media markup lines, templates, links, and markup, keeping readable text."""
     no_media = MEDIA_LINE.sub("", wikitext)
+    no_media = DROP_LINE.sub(lambda m: m.group(1), no_media)
     return str(mwparserfromhell.parse(no_media).strip_code(normalize=True, collapse=True)).strip()
 
 def split_sections(wikitext: str) -> list[tuple[str, str]]:

@@ -4,6 +4,7 @@ from pathlib import Path
 
 from app.config import settings
 from app.ingest.chunk import chunk_page
+from app.ingest.drops import drop_docs
 from app.retrieval.store import COLLECTION, get_embeddings
 from langchain_chroma import Chroma
 
@@ -16,6 +17,7 @@ def main() -> None:
     for path in sorted(RAW_DIR.glob("*.json")):
         page = json.loads(path.read_text(encoding="utf-8"))
         docs.extend(chunk_page(page["title"], page["wikitext"]))
+        docs.extend(drop_docs(page["title"], page["wikitext"]))
 
     ids = [f"chunk-{i}" for i in range(len(docs))]
     for doc, cid in zip(docs, ids):

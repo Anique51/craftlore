@@ -3,7 +3,7 @@ from collections import Counter
 from langchain_core.documents import Document
 
 RRF_K = 60
-MAX_PER_PAGE = 2
+MAX_PER_PAGE = 3
 
 
 def rrf_merge(ranked_lists: list[list[Document]], top_n: int = 5,
