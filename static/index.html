@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CraftLore</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    h1 { margin-bottom: 0.2rem; }
+    .subtitle { color: #666; margin-top: 0; }
+    form { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
+    input { flex: 1; padding: 0.6rem; font-size: 1rem; border: 1px solid #aaa; border-radius: 6px; }
+    button { padding: 0.6rem 1.2rem; font-size: 1rem; border: none; border-radius: 6px; background: #2e7d32; color: white; cursor: pointer; }
+    button:disabled { background: #999; cursor: default; }
+    #status { color: #666; min-height: 1.2rem; }
+    #answer { white-space: pre-wrap; line-height: 1.5; background: #f6f6f6; padding: 1rem; border-radius: 6px; min-height: 2rem; }
+    #sources { margin-top: 1rem; }
+    #sources a { display: block; margin: 0.2rem 0; word-break: break-all; }
+    .notice { color: #777; font-size: 0.85rem; margin-top: 2rem; border-top: 1px solid #ddd; padding-top: 0.8rem; }
+    .error { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h1>CraftLore</h1>
+  <p class="subtitle">Ask about Minecraft Java Edition lore or crafting recipes.</p>
+
+  <form id="ask-form">
+    <input id="question" type="text" maxlength="500" placeholder="e.g. What do ghasts drop when they die?" required>
+    <button id="send" type="submit">Ask</button>
+  </form>
+
+  <div id="status"></div>
+  <div id="answer"></div>
+  <div id="sources"></div>
+
+  <p class="notice">
+    Answers use Minecraft Wiki content, licensed CC BY-NC-SA. This is an unofficial fan project and is non-commercial.
+    Minecraft is a trademark of Mojang Studios.
+  </p>
+
+  <script>
+    const form = document.getElementById("ask-form");
+    const input = document.getElementById("question");
+    const button = document.getElementById("send");
+    const status = document.getElementById("status");
+    const answerBox = document.getElementById("answer");
+    const sourcesBox = document.getElementById("sources");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const question = input.value.trim();
+      if (!question) return;
+
+      button.disabled = true;
+      status.textContent = "Thinking...";
+      status.className = "";
+      answerBox.textContent = "";
+      sourcesBox.innerHTML = "";
+
+      try {
+        const res = await fetch("/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.detail || `Request failed (${res.status})`);
+        }
+        // textContent, not innerHTML: the answer is never rendered as HTML.
+        answerBox.textContent = data.answer;
+        if (!data.verified) {
+          status.textContent = "Note: this answer could not be fully checked against its sources.";
+        } else {
+          status.textContent = "";
+        }
+        data.sources.forEach((url) => {
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = url;
+          sourcesBox.appendChild(link);
+        });
+      } catch (err) {
+        status.textContent = err.message;
+        status.className = "error";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
