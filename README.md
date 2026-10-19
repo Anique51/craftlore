@@ -8,6 +8,21 @@ CraftLore is a question-answering assistant for Minecraft Java Edition. It answe
 
 > **Content license:** Wiki content comes from the Minecraft Wiki under CC BY-NC-SA. This project is non-commercial.
 
+## Table of contents
+
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Tech stack](#tech-stack)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [API](#api)
+- [Testing](#testing)
+- [Evaluation](#evaluation)
+- [Design decisions](#design-decisions)
+- [Known limitations](#known-limitations)
+- [Roadmap](#roadmap)
+- [Licensing and attribution](#licensing-and-attribution)
+
 ## Features
 
 - **Lore questions with citations.** Answers are built from retrieved wiki sections, and each source links to the section it came from.
