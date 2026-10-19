@@ -43,6 +43,7 @@ class AskResponse(BaseModel):
     sources: list[str]
     route: str
     verified: bool
+    recipe: dict | None = None
 
 
 @app.get("/health")
@@ -67,6 +68,7 @@ def ask(req: AskRequest) -> AskResponse:
         sources=list(dict.fromkeys(c["url"] for c in result.get("context", []))),
         route=result.get("route", "lore"),
         verified=bool(result.get("verified")),
+        recipe=result.get("recipe"),
     )
 
 

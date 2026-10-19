@@ -7,7 +7,7 @@ from app.llm import get_llm
 from app.retrieval.bm25 import load_keyword_index
 from app.retrieval.hybrid import search
 from app.retrieval.store import get_vectorstore
-from app.tools.recipes import lookup_recipe
+from app.tools.recipes import lookup_recipe, recipe_layout
 
 MAX_ATTEMPTS = 2
 TOP_N = 5
@@ -80,16 +80,17 @@ def rag(state: CraftState) -> dict:
 def mechanics(state: CraftState) -> dict:
     reply = get_llm().invoke([SystemMessage(EXTRACT_PROMPT), HumanMessage(state["question"])]).content
     item = reply.strip().strip(".\"'").lower()
-    recipe = lookup_recipe.invoke({"item_name": item})
+    recipe_text = lookup_recipe.invoke({"item_name": item})
     return {
         "context": [
             {
-                "text": recipe,
+                "text": recipe_text,
                 "url": RECIPE_SOURCE,
                 "title": "minecraft-data (Minecraft 26.1)",
                 "section": "recipes.json",
             }
-        ]
+        ],
+        "recipe": recipe_layout(item),
     }
 
 

@@ -76,3 +76,67 @@ def lookup_recipe(item_name: str) -> str:
         return f"{display} has no crafting recipe. It is obtained another way, such as mining, trading, or loot."
 
     return "\n\n".join(_describe(r, id_to_name) for r in recipe_list[:MAX_RECIPES])
+
+
+def _pad_grid(rows: list[list]) -> list[list]:
+    """Pad a shaped recipe to a 3x3 display grid, filling empty cells with None."""
+    rows = [list(r) + [None] * (3 - len(r)) for r in rows][:3]
+    while len(rows) < 3:
+        rows.append([None, None, None])
+    return rows
+
+
+def recipe_layout(item_name: str) -> dict | None:
+    """Structured recipe for drawing a crafting grid. Returns None if no recipe exists."""
+    name_to_id, id_to_name, recipes = _load()
+    item_id = name_to_id.get(normalize(item_name))
+    if item_id is None:
+        return None
+    recipe_list = recipes.get(str(item_id), [])
+    if not recipe_list:
+        return None
+    rec = recipe_list[0]
+    result = rec["result"]
+    out_id, count = (result["id"], result.get("count", 1)) if isinstance(result, dict) else (result, 1)
+    result_name = id_to_name.get(out_id, f"unknown item {out_id}")
+
+    if "inShape" in rec:
+        grid = [[None if i is None else _item_name(id_to_name, i) for i in row] for row in rec["inShape"]]
+        return {"result": result_name, "count": count, "type": "shaped",
+                "grid": _pad_grid(grid), "ingredients": None}
+
+    ingredients = [_item_name(id_to_name, i) for i in rec.get("ingredients", []) if i is not None]
+    return {"result": result_name, "count": count, "type": "shapeless",
+            "grid": None, "ingredients": ingredients}
+
+
+def _pad_grid(rows: list[list]) -> list[list]:
+    """Pad a shaped recipe to a 3x3 display grid, filling empty cells with None."""
+    rows = [list(r) + [None] * (3 - len(r)) for r in rows][:3]
+    while len(rows) < 3:
+        rows.append([None, None, None])
+    return rows
+
+
+def recipe_layout(item_name: str) -> dict | None:
+    """Structured recipe for drawing a crafting grid. Returns None if no recipe exists."""
+    name_to_id, id_to_name, recipes = _load()
+    item_id = name_to_id.get(normalize(item_name))
+    if item_id is None:
+        return None
+    recipe_list = recipes.get(str(item_id), [])
+    if not recipe_list:
+        return None
+    rec = recipe_list[0]
+    result = rec["result"]
+    out_id, count = (result["id"], result.get("count", 1)) if isinstance(result, dict) else (result, 1)
+    result_name = id_to_name.get(out_id, f"unknown item {out_id}")
+
+    if "inShape" in rec:
+        grid = [[None if i is None else _item_name(id_to_name, i) for i in row] for row in rec["inShape"]]
+        return {"result": result_name, "count": count, "type": "shaped",
+                "grid": _pad_grid(grid), "ingredients": None}
+
+    ingredients = [_item_name(id_to_name, i) for i in rec.get("ingredients", []) if i is not None]
+    return {"result": result_name, "count": count, "type": "shapeless",
+            "grid": None, "ingredients": ingredients}
